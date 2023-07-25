@@ -1,4 +1,4 @@
-package org.digitalharbor.springboot1.modelos;
+package org.digitalharbor.springboot1.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;

@@ -1,4 +1,4 @@
-package org.digitalharbor.springboot1.modelos;
+package org.digitalharbor.springboot1.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -15,7 +15,6 @@ public class Empleado extends Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_empleado")
     private Integer idEmpleado;
-
 
     @Column(name = "tipo_empleado")
     private TipoEmpleado tipoEmpleado;

@@ -1,4 +1,4 @@
-package org.digitalharbor.springboot1.modelos;
+package org.digitalharbor.springboot1.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -20,6 +20,7 @@ public class Carrera {
     @Column(name = "nombre_carrera",length = 100)
     private String nombre;
 
-    @OneToMany(mappedBy = "carrera", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "carrera", fetch = FetchType.LAZY,cascade = CascadeType.ALL, orphanRemoval = true)
+    //@JoinColumn(name = "id_aula")
     private Set<Aula> aulas;
 }

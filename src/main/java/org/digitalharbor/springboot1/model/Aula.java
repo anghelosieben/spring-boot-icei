@@ -1,12 +1,12 @@
-package org.digitalharbor.springboot1.modelos;
+package org.digitalharbor.springboot1.model;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.yaml.snakeyaml.DumperOptions;
 
 import java.io.Serializable;
-
 
 @Getter
 @Setter
@@ -25,8 +25,10 @@ public class Aula implements Serializable {
     @Column(name = "piso", nullable = false)
     private Integer piso;
 
-    @ManyToOne( cascade = CascadeType.ALL)
+    @ManyToOne( fetch = FetchType.LAZY)
+    @JsonBackReference
+    //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @JoinColumn(name ="id_carrera")
     private Carrera carrera;
-
 }
